@@ -2,60 +2,41 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Découvrez le Zoo Arcadia, un espace éco-responsable situé près de la forêt de Brocéliande, offrant des habitats naturels et des expériences immersives.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zoo Arcadia, un zoo éco-responsable situé en Bretagne près de la forêt de Brocéliande, avec des habitats naturels et des expériences immersives.">
+    <meta name="keywords" content="zoo, Bretagne, éco-responsable, Brocéliande, Arcadia, animaux, jungle, savane, marais, services">
+    <meta name="author" content="Zoo Arcadia">
     <title>Arcadia - Zoo Éco Responsable</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- En-tête -->
     <header>
         <nav>
             <ul class="menu">
-                <li class="menu-logo">
-                    <a href="index.html">
-                        <img src="images/logo.jpg" alt="Logo Arcadia">
-                    </a>
-                </li>
-                <li class="menu-items">
-                    <a href="index.html">Accueil</a>
-                </li>
+                <li><a href="index.html">Accueil</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="habitats.html">Habitats & Animaux</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li class="menu-right dropdown">
+                <li class="dropdown">
                     <button id="login-button">Connexion ▼</button>
-                    <ul class="dropdown-menu">
+                    <ul id="dropdown-menu" class="dropdown-menu">
                         <li><a href="#" class="login-option" data-role="veterinaire">Vétérinaire</a></li>
                         <li><a href="#" class="login-option" data-role="employe">Employé</a></li>
                         <li><a href="#" class="login-option" data-role="administrateur">Administrateur</a></li>
                     </ul>
                 </li>
             </ul>
-            
         </nav>
-                <!-- Modal de connexion -->
-            <div id="login-modal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h2>Connexion</h2>
-                    <form id="login-form">
-                        <input type="hidden" id="role" name="role">
-                        <label for="username">Identifiant</label>
-                        <input type="text" id="username" name="username" required>
-                        <label for="password">Mot de passe</label>
-                        <input type="password" id="password" name="password" required>
-                        <button type="submit">Se connecter</button>
-                    </form>
-                </div>
-            </div>
     </header>
 
+    <!-- Contenu principal -->
     <main>
         <!-- Présentation générale -->
-        <section id="presentation">
+        <section id="presentation" aria-labelledby="presentation-title">
             <div class="presentation-container">
                 <div class="presentation-text">
-                    <h2>Bienvenue au Zoo Arcadia</h2>
+                    <h2 id="presentation-title">Bienvenue au Zoo Arcadia</h2>
                     <p>
                         Situé à proximité de la forêt de Brocéliande en Bretagne, Arcadia est un zoo éco-responsable. Nous 
                         accueillons des espèces fascinantes dans des habitats recréés pour leur bien-être.
@@ -68,7 +49,7 @@
         </section>
         
         <!-- Section Habitats -->
-        <section id="habitats" role="region" aria-labelledby="habitats-title">
+        <section id="habitats" aria-labelledby="habitats-title">
             <h2 id="habitats-title">Découvrez nos habitats</h2>
             <div class="habitats-container">
                 <article class="habitat">
@@ -92,10 +73,9 @@
             </div>
         </section>
         
-
         <!-- Section Animaux -->
-        <section id="animaux">
-            <h2>Nos Animaux</h2>
+        <section id="animaux" aria-labelledby="animaux-title">
+            <h2 id="animaux-title">Nos Animaux</h2>
             <div class="animaux-container">
                 <article class="animal">
                     <img src="images/singe.webp" alt="Singe Capucin">
@@ -131,8 +111,8 @@
         </section>
         
         <!-- Section Services -->
-        <section id="services">
-            <h2>Nos Services</h2>
+        <section id="services" aria-labelledby="services-title">
+            <h2 id="services-title">Nos Services</h2>
             <div class="services-container">
                 <article class="service">
                     <img src="images/restaurant.webp" alt="Restaurant">
@@ -153,8 +133,8 @@
         </section>
         
         <!-- Section Avis -->
-        <section id="avis">
-            <h2>Avis des visiteurs</h2>
+        <section id="avis" aria-labelledby="avis-title">
+            <h2 id="avis-title">Avis des visiteurs</h2>
             <ul id="avis-liste">
                 <li>Super expérience ! – Marie</li>
                 <li>Un endroit magnifique et respectueux de la nature. – Paul</li>
@@ -169,20 +149,19 @@
         </section>
 
         <!-- Section Contact -->
-        <section id="contact">
-            <h2>Contact</h2>
+        <section id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contact</h2>
             <p>Email : contact@zooarcadia.fr</p>
             <p>Téléphone : 02 99 99 99 99</p>
             <p>Horaires : Ouvert tous les jours de 9h à 18h</p>
         </section>
     </main>
 
+    <!-- Pied de page -->
     <footer>
         <p>&copy; 2024 Zoo Arcadia. Tous droits réservés.</p>
     </footer>
-    
 
     <script src="script.js"></script>
-    
 </body>
 </html>

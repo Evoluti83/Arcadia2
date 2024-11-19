@@ -1,150 +1,95 @@
-/* Couleurs globales */
+/* Variables de couleur pour une gestion facile */
+:root {
+    --vert-foret: #2E7D32;
+    --vert-clair: #81C784;
+    --brun-terre: #5D4037;
+    --beige-clair: #F5F5DC;
+    --fond-clair: #E8F5E9;
+    --texte-sombre: #212121;
+    --texte-doux: #555;
+}
+
+/* Styles globaux */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #E8F5E9; 
-    color: #212121; 
+    background-color: #E8F5E9;
+    color: #212121;
 }
 
+/* En-tête */
 header {
-    background: url('images/zoo.webp') no-repeat center center/cover; /* Image de fond */
-    color: #FFFFFF;
-    text-align: center;
-    padding: 2em 0;
-    position: relative;
-}
-
-header::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7); 
-    z-index: 1;
-}
-
-header h1 {
-    position: relative;
-    z-index: 2;
-    font-size: 3em;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-.menu-logo {
-    display: flex;
-    align-items: center;
-    margin-right: 1em;
-}
-
-.menu-logo img {
-    height: 80px; 
-}
-
-.menu-items {
-    display: flex;
-}
-
-.menu-items li a {
-    text-decoration: none;
-    color: #bde4bf; /* Vert forêt */
-    font-size: 2em;
-    transition: color 0.3s;
-}
-
-.menu-items li a:hover {
-    color: #81C784; /* Vert clair au survol */
-}
-
-/* Bouton connexion */
-.menu-right {
-    display: flex; /* Aligne le bouton sur la même ligne */
-    align-items: center;
-}
-
-#login-button {
     background-color: #2E7D32;
-    color: #FFFFFF;
-    border: none;
-    padding: 0.5em 1em;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#login-button:hover {
-    background-color: #81C784; /* Vert clair */
+    padding: 1em 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header nav ul {
-    position: relative;
-    z-index: 2;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     list-style: none;
+    margin: 0;
     padding: 0;
-    margin: 1em 0;
 }
 
 header nav ul li {
-    margin: 0 15px;
+    margin: 0 1em;
 }
 
 header nav ul li a {
-    color: #FFFFFF;
     text-decoration: none;
+    color: #FFFFFF;
+    font-size: 1em;
     font-weight: bold;
     transition: color 0.3s;
 }
 
 header nav ul li a:hover {
-    color: #81C784; 
+    color: #81C784;
 }
-
-.menu-items {
-    display: flex;
-    gap: 1em;
-}
-
-.menu-right {
-    display: flex;
-    align-items: center;
-}
-
-
 
 /* Bouton Connexion */
 #login-button {
-    background-color: #2E7D32; 
-    color: #FFFFFF;
+    background-color: #FFFFFF;
+    color: #2E7D32;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 #login-button:hover {
-    background-color: #81C784; 
+    background-color: #81C784;
+    color: #FFFFFF;
 }
 
-/* Style du menu déroulant */
+/* Menu déroulant */
+.dropdown {
+    position: relative;
+}
+
 .dropdown-menu {
-    display: none; 
+    display: none; /* Masqué par défaut */
     position: absolute;
     top: 100%;
+    left: 0;
     background-color: #FFFFFF;
     border: 1px solid #CCC;
     border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     list-style: none;
     padding: 0;
+    margin: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
     z-index: 1000;
-}
-
-/* Afficher le menu déroulant lorsqu'on ajoute la classe .open */
-.dropdown.open .dropdown-menu {
-    display: block;
 }
 
 .dropdown-menu li {
@@ -153,334 +98,59 @@ header nav ul li a:hover {
 
 .dropdown-menu li a {
     text-decoration: none;
-    color: #212121; 
+    color: #212121;
     display: block;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .dropdown-menu li a:hover {
-    background-color: #81C784; 
-    color: #FFFFFF;
-}
-
-/* Style du modal */
-.modal {
-    display: none; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); 
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-}
-
-.modal-content {
-    background: #FFF;
-    padding: 20px;
-    border-radius: 8px;
-    width: 400px;
-    max-width: 90%;
-    text-align: center;
-}
-
-.modal-content .close {
-    float: right;
-    font-size: 1.5em;
-    cursor: pointer;
-}
-
-.modal-content h2 {
-    color: #2E7D32; 
-    margin-bottom: 1em;
-}
-
-.modal-content input {
-    width: 90%;
-    margin: 0.5em 0;
-    padding: 0.8em;
-    border: 1px solid #CCC;
-    border-radius: 5px;
-}
-
-.modal-content button {
-    background-color: #2E7D32;
-    color: #FFFFFF;
-    padding: 0.8em 1.5em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.modal-content button:hover {
     background-color: #81C784;
+    color: #FFFFFF;
 }
-/* Afficher le menu déroulant lorsque la classe active est ajoutée */
+
+/* Afficher le menu lorsqu'il est actif */
 .dropdown.open .dropdown-menu {
     display: block;
 }
 
+/* Présentation */
 #presentation {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2em;
     padding: 2em;
-    background: #E8F5E9; 
+    background-color: #E8F5E9;
 }
 
-.presentation-text {
-    text-align: center;
-}
-
-.presentation-text h2 {
-    color: #2E7D32; /* Vert forêt */
-    font-size: 2.5em;
-}
-
-
-.presentation-media img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    flex: 1;
-}
-
-.zoo{
-    width: 100%; 
-}
-
-#habitats {
-    text-align: center;
-    background: #E8F5E9;
-    gap: 2em;
-    padding: 2em;
-}
-
-.habitats-container {
+/* Habitats, Animaux et Services */
+.habitats-container, .animaux-container, .services-container {
     display: flex;
+    flex-wrap: wrap;
     gap: 1.5em;
-    justify-content: space-between;
-    padding: 2em;
-    background-color: #E8F5E9;
+    justify-content: center;
+    margin: 2em 0;
 }
 
-.habitat h3 {
-    color: #5D4037; /* Brun */
-}
-.habitat .btn {
-    display: inline-block;
-    margin-top: 1em;
-    background: #2E7D32;
-    color: #E8F5E9;
-    padding: 0.5em 1em;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.habitat .btn:hover {
-    background: #81C784; /* Vert clair */
-}
-
-#animaux{
-    background-color: #E8F5E9;
-}
-/* Conteneur principal des animaux */
-.animaux-container {
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 1em; 
-    justify-content: space-between; 
-    max-width: 100%;
-    background-color: #E8F5E9;
-}
-
-/* Chaque animal */
-.animal {
-    flex: 1 1 calc(33.333% - 1em); 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    background: #E8F5E9; 
-    border-radius: 8px; 
+.habitat, .animal, .service {
+    flex: 1 1 calc(33.333% - 1em);
     text-align: center;
-    padding: 1em;
-    
-}
-
-/* Image des animaux */
-.animal img {
-    max-width: 100%; 
-    height: auto;
-    margin: 0 auto; 
-    display: block; 
-    border-radius: 8px; 
-}
-
-/* Titre et texte */
-.animal h3 {
-    font-size: 1.2em;
-    color: #2E7D32; /* Vert forêt */
-}
-
-.animal p {
-    color: #555; /* Texte gris doux */
-    font-size: 0.9em;
-}
-.animal .btn {
-    display: inline-block;
-    margin-top: 1em;
-    background: #2E7D32;
-    color: #FFFFFF;
-    padding: 0.5em 1em;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.animal .btn:hover {
-    background: #81C784; /* Vert clair */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .animal {
-        flex: 1 1 calc(50% - 1em); /* Deux par ligne sur tablettes */
-    }
-}
-
-@media (max-width: 480px) {
-    .animal {
-        flex: 1 1 100%; /* Une seule colonne sur mobile */
-    }
-}
-
-#services {
-    background-color: #E8F5E9;
-}
-/* Conteneur des services */
-.services-container {
-    display: flex;
-    flex-wrap: wrap; /* Permet de passer à la ligne sur les petits écrans */
-    gap: 1em; /* Espacement entre les services */
-    justify-content: space-between; /* Répartit les services uniformément */
-}
-
-/* Chaque service */
-.service {
-    flex: 1 1 calc(33.333% - 1em); /* Trois colonnes égales */
-    text-align: center;
-    background: #E8F5E9; /* Fond blanc pour contraste */
-    border: 1px solid #CCC; /* Bordure subtile */
-    border-radius: 8px; /* Coins arrondis */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombrage */
-    padding: 1em;
-}
-
-/* Images des services */
-.service img {
-    max-width: 100%;
-    height: auto;
+    background: #FFFFFF;
     border-radius: 8px;
-    margin-bottom: 1em;
-}
-
-/* Titres et texte */
-.service h3 {
-    font-size: 1.2em;
-    color: #2E7D32; /* Vert forêt */
-}
-
-.service p {
-    color: #555; /* Texte gris doux */
-    font-size: 0.9em;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .service {
-        flex: 1 1 calc(50% - 1em); /* Deux par ligne sur tablettes */
-    }
-}
-
-@media (max-width: 480px) {
-    .service {
-        flex: 1 1 100%; /* Une seule colonne sur mobile */
-    }
-}
-
-#avis {
-    background-color:#E8F5E9 ;
-}
-
-#contact {
-    background-color: #E8F5E9;
-}
-
-
-/* Titres principaux */
-h1, h2 {
-    text-align: center;
-    color: #5D4037; /* Vert forêt */
-}
-
-/* Titres secondaires */
-h3 {
-    color: #5D4037; /* Brun terre */
-}
-
-/* Sections */
-section {
-    padding: 2em;
-    margin: 1em auto;
-    background: #FFFFFF; /* Fond blanc pour contraste */
-    border-radius: 8px;
+    padding: 1em;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 1200px;
 }
 
-section img {
+.habitat img, .animal img, .service img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    margin-top: 1em;
-}
-
-/* Boutons */
-button {
-    background-color: #2E7D32; /* Vert forêt */
-    color: #FFFFFF; /* Blanc */
-    border: none;
-    padding: 0.8em 1.5em;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #81C784; /* Vert clair */
-}
-
-/* Formulaires */
-form input, form textarea {
-    width: 100%;
-    padding: 0.8em;
-    margin-bottom: 1em;
-    border: 1px solid #5D4037; /* Brun terre */
-    border-radius: 5px;
-    background: #F5F5DC; /* Beige clair */
-    color: #212121;
-}
-
-form input:focus, form textarea:focus {
-    outline: none;
-    border-color: #2E7D32; /* Vert forêt */
-    box-shadow: 0 0 5px #2E7D32;
 }
 
 /* Footer */
 footer {
-    background: #5D4037; /* Brun terre */
-    color: #FFFFFF; /* Blanc */
+    background: #5D4037;
+    color: #FFFFFF;
     text-align: center;
-    padding: 1em 0;
+    padding: 1em;
 }
