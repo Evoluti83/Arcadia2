@@ -2,21 +2,27 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez le Zoo Arcadia, un espace éco-responsable situé près de la forêt de Brocéliande, offrant des habitats naturels et des expériences immersives.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Arcadia - Zoo Éco Responsable</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
+            <ul class="menu">
+                <li class="menu-logo">
+                    <a href="index.html">
+                        <img src="images/logo.jpg" alt="Logo Arcadia">
+                    </a>
+                </li>
+                <li class="menu-items">
+                    <a href="index.html">Accueil</a>
+                </li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="habitats.html">Habitats & Animaux</a></li>
                 <li><a href="#contact">Contact</a></li>
-                
-                <!-- Bouton déroulant -->
-                <li class="dropdown">
+                <li class="menu-right dropdown">
                     <button id="login-button">Connexion ▼</button>
                     <ul class="dropdown-menu">
                         <li><a href="#" class="login-option" data-role="veterinaire">Vétérinaire</a></li>
@@ -25,23 +31,23 @@
                     </ul>
                 </li>
             </ul>
+            
         </nav>
-        <!-- Modal de connexion -->
-        <div id="login-modal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Connexion</h2>
-                <form id="login-form">
-                    <input type="hidden" id="role" name="role">
-                    <label for="username">Identifiant</label>
-                    <input type="text" id="username" name="username" required>
-                    <label for="password">Mot de passe</label>
-                    <input type="password" id="password" name="password" required>
-                    <button type="submit">Se connecter</button>
-                </form>
+                <!-- Modal de connexion -->
+            <div id="login-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Connexion</h2>
+                    <form id="login-form">
+                        <input type="hidden" id="role" name="role">
+                        <label for="username">Identifiant</label>
+                        <input type="text" id="username" name="username" required>
+                        <label for="password">Mot de passe</label>
+                        <input type="password" id="password" name="password" required>
+                        <button type="submit">Se connecter</button>
+                    </form>
+                </div>
             </div>
-        </div>
-</div>
     </header>
 
     <main>
@@ -62,8 +68,8 @@
         </section>
         
         <!-- Section Habitats -->
-        <section id="habitats">
-            <h2>Découvrez nos habitats</h2>
+        <section id="habitats" role="region" aria-labelledby="habitats-title">
+            <h2 id="habitats-title">Découvrez nos habitats</h2>
             <div class="habitats-container">
                 <article class="habitat">
                     <img src="images/jungle.webp" alt="Jungle">
@@ -172,8 +178,6 @@
     </main>
 
     <footer>
-        <div class="footer-container">
-        </div>
         <p>&copy; 2024 Zoo Arcadia. Tous droits réservés.</p>
     </footer>
     
