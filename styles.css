@@ -1,13 +1,16 @@
+/* Couleurs globales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    background-color: #F5F5DC; /* Beige clair */
+    color: #212121; /* Gris foncé pour le texte */
 }
 
 header {
-    background: #4CAF50;
-    color: white;
+    background: #2E7D32; /* Vert forêt */
+    color: #FFFFFF; /* Blanc pour le texte */
     padding: 1em 0;
     text-align: center;
 }
@@ -25,59 +28,111 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #FFFFFF; /* Blanc */
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1em;
+nav ul li a:hover {
+    color: #81C784; /* Vert clair en survol */
 }
 
+/* Titres principaux */
+h1, h2 {
+    text-align: center;
+    color: #2E7D32; /* Vert forêt */
+}
+
+/* Titres secondaires */
+h3 {
+    color: #5D4037; /* Brun terre */
+}
+
+/* Sections */
 section {
-    margin-bottom: 2em;
+    padding: 2em;
+    margin: 1em auto;
+    background: #FFFFFF; /* Fond blanc pour contraste */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
 }
 
 section img {
     max-width: 100%;
     height: auto;
-    display: block;
-    margin: 0 auto;
+    border-radius: 8px;
+    margin-top: 1em;
 }
 
+/* Boutons */
+button {
+    background-color: #2E7D32; /* Vert forêt */
+    color: #FFFFFF; /* Blanc */
+    border: none;
+    padding: 0.8em 1.5em;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #81C784; /* Vert clair */
+}
+
+/* Formulaires */
+form input, form textarea {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1em;
+    border: 1px solid #5D4037; /* Brun terre */
+    border-radius: 5px;
+    background: #F5F5DC; /* Beige clair */
+    color: #212121;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #2E7D32; /* Vert forêt */
+    box-shadow: 0 0 5px #2E7D32;
+}
+
+/* Footer */
 footer {
-    background: #333;
-    color: white;
+    background: #5D4037; /* Brun terre */
+    color: #FFFFFF; /* Blanc */
     text-align: center;
     padding: 1em 0;
 }
 
-/* Formulaires */
-form {
-    margin-top: 1em;
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    main {
+        padding: 0.5em;
+    }
+
+    section {
+        padding: 1em;
+    }
 }
 
-form label {
-    display: block;
-    margin-bottom: 0.5em;
-}
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
 
-form input, form textarea, form button {
-    width: 100%;
-    padding: 0.5em;
-    margin-bottom: 1em;
-}
+    section h2 {
+        font-size: 1.2em;
+    }
 
-form button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
+    footer {
+        font-size: 0.8em;
+    }
 }
-
-form button:hover {
-    background-color: #45a049;
-}
-
