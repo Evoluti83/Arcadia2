@@ -58,7 +58,114 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #81C784; /* Vert clair au survol */
+    color: #81C784; 
+}
+/* Bouton Connexion */
+#login-button {
+    background-color: #2E7D32; 
+    color: #FFFFFF;
+    border: none;
+    padding: 0.8em 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#login-button:hover {
+    background-color: #81C784; 
+}
+
+/* Style du menu déroulant */
+.dropdown-menu {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    background-color: #FFFFFF;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 0;
+    z-index: 1000;
+}
+
+/* Afficher le menu déroulant lorsqu'on ajoute la classe .open */
+.dropdown.open .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 0.8em 1em;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: #212121; 
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #81C784; 
+    color: #FFFFFF;
+}
+
+/* Style du modal */
+.modal {
+    display: none; /* Masqué par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background: #FFF;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+}
+
+.modal-content .close {
+    float: right;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    color: #2E7D32; /* Vert forêt */
+    margin-bottom: 1em;
+}
+
+.modal-content input {
+    width: 90%;
+    margin: 0.5em 0;
+    padding: 0.8em;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+}
+
+.modal-content button {
+    background-color: #2E7D32;
+    color: #FFFFFF;
+    padding: 0.8em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #81C784;
+}
+/* Afficher le menu déroulant lorsque la classe active est ajoutée */
+.dropdown.open .dropdown-menu {
+    display: block;
 }
 
 #presentation {
@@ -67,7 +174,7 @@ header nav ul li a:hover {
     justify-content: space-between;
     gap: 2em;
     padding: 2em;
-    background: #E8F5E9; /* Vert clair */
+    background: #E8F5E9; 
 }
 
 .presentation-text {
