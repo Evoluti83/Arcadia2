@@ -4,44 +4,262 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #F5F5DC; /* Beige clair */
+    background-color: #E8F5E9; /* Beige clair */
     color: #212121; /* Gris foncé pour le texte */
 }
 
 header {
-    background: #2E7D32; /* Vert forêt */
-    color: #FFFFFF; /* Blanc pour le texte */
-    padding: 1em 0;
+    background: url('images/zoo.webp') no-repeat center center/cover; /* Image de fond */
+    color: #FFFFFF;
     text-align: center;
+    padding: 2em 0; /* Augmente l'espace pour l'image de fond */
+    position: relative;
 }
 
-nav ul {
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Superposition sombre */
+    z-index: 1;
+}
+
+header h1 {
+    position: relative;
+    z-index: 2; /* Texte au-dessus de la superposition */
+    font-size: 3em;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header nav ul {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
     list-style: none;
     padding: 0;
-    margin: 0;
-    text-align: center;
+    margin: 1em 0;
 }
 
-nav ul li {
-    display: inline-block;
-    margin: 0 10px;
+header nav ul li {
+    margin: 0 15px;
 }
 
-nav ul li a {
-    color: #FFFFFF; /* Blanc */
+header nav ul li a {
+    color: #FFFFFF;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
 }
 
-nav ul li a:hover {
-    color: #81C784; /* Vert clair en survol */
+header nav ul li a:hover {
+    color: #81C784; /* Vert clair au survol */
 }
+
+#presentation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2em;
+    padding: 2em;
+    background: #E8F5E9; /* Vert clair */
+}
+
+.presentation-text {
+    text-align: center;
+}
+
+.presentation-text h2 {
+    color: #2E7D32; /* Vert forêt */
+    font-size: 2.5em;
+}
+
+
+.presentation-media img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.zoo{
+    width: 100%; 
+}
+
+#habitats {
+    text-align: center;
+    background: #E8F5E9;
+    gap: 2em;
+    padding: 2em;
+}
+
+.habitats-container {
+    display: flex;
+    gap: 1.5em;
+    justify-content: space-between;
+    padding: 2em;
+    background-color: #E8F5E9;
+}
+
+.habitat h3 {
+    color: #5D4037; /* Brun */
+}
+.habitat .btn {
+    display: inline-block;
+    margin-top: 1em;
+    background: #2E7D32;
+    color: #E8F5E9;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.habitat .btn:hover {
+    background: #81C784; /* Vert clair */
+}
+
+#animaux{
+    background-color: #E8F5E9;
+}
+/* Conteneur principal des animaux */
+.animaux-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 1em; 
+    justify-content: space-between; 
+    max-width: 100%;
+    background-color: #E8F5E9;
+}
+
+/* Chaque animal */
+.animal {
+    flex: 1 1 calc(33.333% - 1em); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    background: #E8F5E9; 
+    border-radius: 8px; 
+    text-align: center;
+    padding: 1em;
+    
+}
+
+/* Image des animaux */
+.animal img {
+    max-width: 100%; 
+    height: auto;
+    margin: 0 auto; 
+    display: block; 
+    border-radius: 8px; 
+}
+
+/* Titre et texte */
+.animal h3 {
+    font-size: 1.2em;
+    color: #2E7D32; /* Vert forêt */
+}
+
+.animal p {
+    color: #555; /* Texte gris doux */
+    font-size: 0.9em;
+}
+.animal .btn {
+    display: inline-block;
+    margin-top: 1em;
+    background: #2E7D32;
+    color: #FFFFFF;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.animal .btn:hover {
+    background: #81C784; /* Vert clair */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .animal {
+        flex: 1 1 calc(50% - 1em); /* Deux par ligne sur tablettes */
+    }
+}
+
+@media (max-width: 480px) {
+    .animal {
+        flex: 1 1 100%; /* Une seule colonne sur mobile */
+    }
+}
+
+#services {
+    background-color: #E8F5E9;
+}
+/* Conteneur des services */
+.services-container {
+    display: flex;
+    flex-wrap: wrap; /* Permet de passer à la ligne sur les petits écrans */
+    gap: 1em; /* Espacement entre les services */
+    justify-content: space-between; /* Répartit les services uniformément */
+}
+
+/* Chaque service */
+.service {
+    flex: 1 1 calc(33.333% - 1em); /* Trois colonnes égales */
+    text-align: center;
+    background: #E8F5E9; /* Fond blanc pour contraste */
+    border: 1px solid #CCC; /* Bordure subtile */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombrage */
+    padding: 1em;
+}
+
+/* Images des services */
+.service img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1em;
+}
+
+/* Titres et texte */
+.service h3 {
+    font-size: 1.2em;
+    color: #2E7D32; /* Vert forêt */
+}
+
+.service p {
+    color: #555; /* Texte gris doux */
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .service {
+        flex: 1 1 calc(50% - 1em); /* Deux par ligne sur tablettes */
+    }
+}
+
+@media (max-width: 480px) {
+    .service {
+        flex: 1 1 100%; /* Une seule colonne sur mobile */
+    }
+}
+
+#avis {
+    background-color:#E8F5E9 ;
+}
+
+#contact {
+    background-color: #E8F5E9;
+}
+
 
 /* Titres principaux */
 h1, h2 {
     text-align: center;
-    color: #2E7D32; /* Vert forêt */
+    color: #5D4037; /* Vert forêt */
 }
 
 /* Titres secondaires */
@@ -105,34 +323,4 @@ footer {
     color: #FFFFFF; /* Blanc */
     text-align: center;
     padding: 1em 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    main {
-        padding: 0.5em;
-    }
-
-    section {
-        padding: 1em;
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.5em;
-    }
-
-    section h2 {
-        font-size: 1.2em;
-    }
-
-    footer {
-        font-size: 0.8em;
-    }
 }
