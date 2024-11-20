@@ -21,3 +21,5 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('Élément(s) manquant(s) : Vérifiez que #login-button et .dropdown existent.');
     }
 });
+
+

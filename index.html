@@ -49,29 +49,48 @@
         </section>
         
         <!-- Section Habitats -->
-        <section id="habitats" aria-labelledby="habitats-title">
-            <h2 id="habitats-title">Découvrez nos habitats</h2>
-            <div class="habitats-container">
-                <article class="habitat">
-                    <img src="images/jungle.webp" alt="Jungle">
-                    <h3>La Jungle</h3>
-                    <p>Une oasis luxuriante où vivent des singes, perroquets et tigres.</p>
-                    <a href="jungle.html" class="btn">Explorer</a>
-                </article>
-                <article class="habitat">
-                    <img src="images/marais.webp" alt="Marais">
-                    <h3>Le Marais</h3>
-                    <p>Découvrez les crocodiles, flamants roses et tortues dans cet habitat humide.</p>
-                    <a href="marais.html" class="btn">Explorer</a>
-                </article>
-                <article class="habitat">
-                    <img src="images/savane.webp" alt="Savane">
-                    <h3>La Savane</h3>
-                    <p>Rencontrez nos majestueux lions, girafes et zèbres.</p>
-                    <a href="savane.html" class="btn">Explorer</a>
-                </article>
+        <section id="habitats">
+            <h1>Nos Habitats</h1>
+            <div class="habitat-container">
+                <!-- Habitat Jungle -->
+                <div class="habitat">
+                    <img src="images/jungle.webp" alt="La Jungle">
+                    <h2>La Jungle</h2>
+                    <p>Une oasis luxuriante où vivent de nombreuses espèces fascinantes.</p>
+                    <ul class="animal-list">
+                        <li><a href="animal.html?name=Singe%20Capucin&species=Primates&image=images/singe.webp">Singe Capucin</a></li>
+                        <li><a href="animal.html?name=Tigre%20du%20Bengale&species=Panthera%20tigris&image=images/tigre.webp">Tigre du Bengale</a></li>
+                        <li><a href="animal.html?name=Perroquet%20Ara&species=Psittacidae&image=images/perroquet.webp">Perroquet Ara</a></li>
+                    </ul>
+                </div>
+
+                <!-- Habitat Marais -->
+                <div class="habitat">
+                    <img src="images/marais.webp" alt="Le Marais">
+                    <h2>Le Marais</h2>
+                    <p>Un habitat humide abritant crocodiles, flamants roses et tortues.</p>
+                    <ul class="animal-list">
+                        <li><a href="animal.html?name=Crocodile%20du%20Nil&species=Crocodylus%20niloticus&image=images/crocodile.webp">Crocodile du Nil</a></li>
+                        <li><a href="animal.html?name=Flamant%20Rose&species=Phoenicopteridae&image=images/flamant.webp">Flamant Rose</a></li>
+                        <li><a href="animal.html?name=Tortue%20d'eau%20douce&species=Testudines&image=images/tortue.webp">Tortue d'eau douce</a></li>
+                    </ul>
+                </div>
+
+                <!-- Habitat Savane -->
+                <div class="habitat">
+                    <img src="images/savane.webp" alt="La Savane">
+                    <h2>La Savane</h2>
+                    <p>Une vaste plaine où se promènent lions, girafes et zèbres.</p>
+                    <ul class="animal-list">
+                        <li><a href="animal.html?name=Lion&species=Panthera%20leo&image=images/lion.webp">Lion</a></li>
+                        <li><a href="animal.html?name=Girafe&species=Giraffa%20camelopardalis&image=images/girafe.webp">Girafe</a></li>
+                        <li><a href="animal.html?name=Zèbre&species=Equus%20quagga&image=images/zebre.webp">Zèbre</a></li>
+                    </ul>
+                </div>
             </div>
         </section>
+        
+        
         
         <!-- Section Animaux -->
         <section id="animaux" aria-labelledby="animaux-title">
@@ -163,5 +182,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="habitats.js" defer></script>
 </body>
 </html>

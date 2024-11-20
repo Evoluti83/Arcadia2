@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal - Zoo Arcadia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- En-tête -->
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="habitats.html">Habitats & Animaux</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenu principal -->
+    <main>
+        <section id="animal-details">
+            <h1 id="animal-name">Nom de l'animal</h1>
+            <img id="animal-image" src="#" alt="Animal Image">
+            <p><strong>Espèce :</strong> <span id="animal-species">Espèce inconnue</span></p>
+            <a href="habitats.html">Retour aux habitats</a>
+        </section>
+    </main>
+
+    <!-- Script pour traiter les paramètres URL -->
+    <script>
+        // Récupérer les paramètres de l'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const species = urlParams.get('species');
+        const image = urlParams.get('image');
+
+        // Mettre à jour le contenu de la page
+        document.getElementById('animal-name').textContent = name;
+        document.getElementById('animal-species').textContent = species;
+        document.getElementById('animal-image').src = image;
+        document.getElementById('animal-image').alt = name;
+    </script>
+</body>
+</html>

@@ -8,44 +8,59 @@
 </head>
 <body>
     <header>
-        <h1>Nos Services</h1>
         <nav>
-            <ul>
+            <ul class="menu">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="habitats.html">Habitats & Animaux</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#login">Connexion</a></li>
+                <li class="dropdown">
+                    <button id="login-button">Connexion ▼</button>
+                    <ul id="dropdown-menu" class="dropdown-menu">
+                        <li><a href="#" class="login-option" data-role="veterinaire">Vétérinaire</a></li>
+                        <li><a href="#" class="login-option" data-role="employe">Employé</a></li>
+                        <li><a href="#" class="login-option" data-role="administrateur">Administrateur</a></li>
+                    </ul>
+                </li>
             </ul>
-        </nav>       
+        </nav>
     </header>
 
-    <div class="dropdown">
-        <button id="login-button">Connexion ▼</button>
-        <ul id="dropdown-menu" class="dropdown-menu">
-            <li><a href="#" class="login-option" data-role="veterinaire">Vétérinaire</a></li>
-            <li><a href="#" class="login-option" data-role="employe">Employé</a></li>
-            <li><a href="#" class="login-option" data-role="administrateur">Administrateur</a></li>
-        </ul>
-    </div>
-
     <main>
-        <section>
-            <h2>Restauration</h2>
-            <p>Plats locaux et biologiques dans un cadre convivial.</p>
+        <section id="services" aria-labelledby="services-title">
+            <h2 id="services-title">Nos Services</h2>
+            <div class="services-container">
+                <article class="service">
+                    <img src="images/restaurant.webp" alt="Restaurant">
+                    <h3>Restauration</h3>
+                    <p>Profitez de plats locaux et biologiques dans notre restaurant.</p>
+                </article>
+                <article class="service">
+                    <img src="images/visite.webp" alt="Visite Guidée">
+                    <h3>Visite Guidée</h3>
+                    <p>Explorez le zoo accompagné de nos soigneurs passionnés (services gratuits).</p>
+                </article>
+                <article class="service">
+                    <img src="images/train.webp" alt="Petit Train">
+                    <h3>Petit Train</h3>
+                    <p>Découvrez le parc à bord de notre train écologique.</p>
+                </article>
+            </div>
         </section>
-        <section>
-            <h2>Visite Guidée</h2>
-            <p>Découvrez les secrets des animaux avec nos soigneurs.</p>
-        </section>
-        <section>
-            <h2>Petit Train</h2>
-            <p>Explorez tout le parc sans effort à bord du train écologique.</p>
+
+        <!-- Section Contact -->
+        <section id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contact</h2>
+            <p>Email : contact@zooarcadia.fr</p>
+            <p>Téléphone : 02 99 99 99 99</p>
+            <p>Horaires : Ouvert tous les jours de 9h à 18h</p>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2024 Zoo Arcadia. Tous droits réservés.</p>
     </footer>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
