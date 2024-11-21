@@ -89,4 +89,52 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const animals = document.querySelectorAll('.animal');
+    const modal = document.getElementById('animal-modal');
+    const closeModal = document.getElementById('close-modal');
+
+    // Éléments du modal
+    const modalName = document.getElementById('animal-name');
+    const modalFirstName = document.getElementById('animal-firstname');
+    const modalImage = document.getElementById('animal-image');
+    const modalSpecies = document.getElementById('animal-species');
+    const modalHabitat = document.getElementById('animal-habitat');
+
+    // Ouvrir le modal lorsqu'un animal est cliqué
+    animals.forEach(animal => {
+        animal.addEventListener('click', () => {
+            const name = animal.dataset.name;
+            const firstname = animal.dataset.firstname;
+            const species = animal.dataset.species;
+            const image = animal.dataset.image;
+            const habitat = animal.dataset.habitat;
+
+            // Mettre à jour le contenu du modal
+            modalName.textContent = name;
+            modalFirstName.textContent = firstname;
+            modalImage.src = image;
+            modalImage.alt = name;
+            modalSpecies.textContent = species;
+            modalHabitat.textContent = habitat;
+
+            // Afficher le modal
+            modal.classList.add('active');
+        });
+    });
+
+    // Fermer le modal
+    closeModal.addEventListener('click', () => {
+        modal.classList.remove('active');
+    });
+
+    // Fermer le modal en cliquant en dehors
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+        }
+    });
+});
+
+
 

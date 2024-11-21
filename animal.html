@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animal - Zoo Arcadia</title>
+    <title>Animaux - Zoo Arcadia</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,29 +17,96 @@
         </nav>
     </header>
 
+    <!-- Modale de connexion -->
+    <div id="login-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <h2 id="modal-title">Connexion</h2>
+            <form id="login-form" action="auth.php" method="POST">
+                <input type="hidden" id="role" name="role">
+                <label for="username">Identifiant :</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required>
+
+                <p id="error-message" class="error hidden">Identifiant ou mot de passe incorrect</p>
+
+                <button type="submit">Se connecter</button>
+            </form>
+        </div>
+    </div>
+
     <!-- Contenu principal -->
     <main>
-        <section id="animal-details">
-            <h1 id="animal-name">Nom de l'animal</h1>
-            <img id="animal-image" src="#" alt="Animal Image">
-            <p><strong>Espèce :</strong> <span id="animal-species">Espèce inconnue</span></p>
-            <a href="habitats.html">Retour aux habitats</a>
+        <section id="animals">
+            <h1>Nos Habitats et Animaux</h1>
+
+            <!-- Jungle -->
+            <h2>Jungle</h2>
+            <div class="animal-list">
+                <div class="animal" data-name="Singe Capucin" data-firstname="Charlie" data-species="Primates" data-image="images/singe.webp" data-habitat="Jungle">
+                    <img src="images/singe.webp" alt="Singe Capucin">
+                    <h3>Singe Capucin</h3>
+                </div>
+                <div class="animal" data-name="Tigre du Bengale" data-firstname="Bagherra" data-species="Panthera tigris" data-image="images/tigre.webp" data-habitat="Jungle">
+                    <img src="images/tigre.webp" alt="Tigre du Bengale">
+                    <h3>Tigre du Bengale</h3>
+                </div>
+                <div class="animal" data-name="Perroquet Ara" data-firstname="Coco" data-species="Psittacidae" data-image="images/perroquet.webp" data-habitat="Jungle">
+                    <img src="images/perroquet.webp" alt="Perroquet Ara">
+                    <h3>Perroquet Ara</h3>
+                </div>
+            </div>
+
+            <!-- Marais -->
+            <h2>Marais</h2>
+            <div class="animal-list">
+                <div class="animal" data-name="Crocodile du Nil" data-firstname="Croco" data-species="Crocodylus niloticus" data-image="images/crocodile.webp" data-habitat="Marais">
+                    <img src="images/crocodile.webp" alt="Crocodile du Nil">
+                    <h3>Crocodile du Nil</h3>
+                </div>
+                <div class="animal" data-name="Flamant Rose" data-firstname="Rosa" data-species="Phoenicopterus roseus" data-image="images/flamant.webp" data-habitat="Marais">
+                    <img src="images/flamant.webp" alt="Flamant Rose">
+                    <h3>Flamant Rose</h3>
+                </div>
+                <div class="animal" data-name="Tortue" data-firstname="Léonardo" data-species="Chelonioidea" data-image="images/tortue.webp" data-habitat="Marais">
+                    <img src="images/tortue.webp" alt="Tortue">
+                    <h3>Tortue</h3>
+                </div>
+            </div>
+
+            <!-- Savane -->
+            <h2>Savane</h2>
+            <div class="animal-list">
+                <div class="animal" data-name="Lion" data-firstname="Simba" data-species="Panthera leo" data-image="images/lion.webp" data-habitat="Savane">
+                    <img src="images/lion.webp" alt="Lion">
+                    <h3>Lion</h3>
+                </div>
+                <div class="animal" data-name="Girafe" data-firstname="Yellow" data-species="Giraffa camelopardalis" data-image="images/girafe.webp" data-habitat="Savane">
+                    <img src="images/girafe.webp" alt="Girafe">
+                    <h3>Girafe</h3>
+                </div>
+                <div class="animal" data-name="Zèbre" data-firstname="Zèbrul" data-species="Equus quagga" data-image="images/zebre.webp" data-habitat="Savane">
+                    <img src="images/zebre.webp" alt="Zèbre">
+                    <h3>Zèbre</h3>
+                </div>
+            </div>
         </section>
     </main>
 
-    <!-- Script pour traiter les paramètres URL -->
-    <script>
-        // Récupérer les paramètres de l'URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const name = urlParams.get('name');
-        const species = urlParams.get('species');
-        const image = urlParams.get('image');
+    <!-- Modal -->
+        <div id="animal-modal" class="modal hidden">
+            <div class="modal-content">
+                <span id="close-modal" class="close">&times;</span>
+                <h2 id="animal-name">Nom de l'animal</h2>
+                <img id="animal-image" src="#" alt="Image de l'animal">
+                <p><strong>Prénom :</strong> <span id="animal-firstname">Prénom inconnu</span></p>
+                <p><strong>Espèce :</strong> <span id="animal-species">Espèce inconnue</span></p>
+                <p><strong>Habitat :</strong> <span id="animal-habitat">Habitat inconnu</span></p>
+            </div>
+        </div>
 
-        // Mettre à jour le contenu de la page
-        document.getElementById('animal-name').textContent = name;
-        document.getElementById('animal-species').textContent = species;
-        document.getElementById('animal-image').src = image;
-        document.getElementById('animal-image').alt = name;
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
