@@ -111,17 +111,108 @@ header nav ul li a:hover {
 .dropdown.open .dropdown-menu {
     display: block;
 }
+/* Modale */
+.modal {
+    display: none; /* Masqué par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
 
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 2em;
+    border-radius: 8px;
+    width: 300px;
+    max-width: 90%;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+    margin-bottom: 1em;
+    color: #2E7D32;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: #555;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-content button {
+    background-color: #2E7D32;
+    color: #fff;
+    padding: 0.8em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.modal-content button:hover {
+    background-color: #81C784;
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+    display: block;
+    margin: 0.5em 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Afficher le modal */
+.modal.active {
+    display: flex; /* Affiche le modal en mode flex */
+}
 /* Présentation */
 #presentation {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2em;
-    padding: 2em;
-    background-color: #E8F5E9;
+    position: relative;
+    width: 100%; 
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
     text-align: center;
 }
+
+#presentation .presentation-media img {
+    width: 100%; /* Étire l'image pour qu'elle prenne toute la largeur */
+    height: auto; /* Garde les proportions de l'image */
+    display: block; /* Supprime l'espace blanc autour de l'image */
+}
+
 
 /* Habitats, Animaux et Services */
 .habitats-container, .animaux-container, .services-container {
@@ -260,6 +351,7 @@ footer {
 #animal-details {
     text-align: center;
     padding: 2em;
+    list-style: none;
 }
 
 #animal-details img {
@@ -271,6 +363,7 @@ footer {
 #animal-details p {
     font-size: 1.2em;
     margin-bottom: 1em;
+    list-style: none;
 }
 
 #animal-details a {
@@ -279,4 +372,5 @@ footer {
     font-weight: bold;
     margin-top: 1em;
     display: inline-block;
+    list-style: none;
 }

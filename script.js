@@ -22,4 +22,71 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const loginModal = document.getElementById('login-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const closeModal = document.getElementById('close-modal');
+    const roleInput = document.getElementById('role');
+    const loginOptions = document.querySelectorAll('.login-option');
+    const loginForm = document.getElementById('login-form');
+    const errorMessage = document.getElementById('error-message');
+
+    // Afficher le modal en cliquant sur une option de connexion
+    loginOptions.forEach(option => {
+        option.addEventListener('click', (e) => {
+            e.preventDefault();
+            const role = option.dataset.role;
+
+            // Mettre à jour le titre et le rôle caché
+            modalTitle.textContent = `Connexion - ${role.charAt(0).toUpperCase() + role.slice(1)}`;
+            roleInput.value = role;
+
+            // Afficher le modal
+            loginModal.classList.add('active');
+        });
+    });
+
+    // Fermer le modal en cliquant sur le bouton de fermeture
+    closeModal.addEventListener('click', () => {
+        loginModal.classList.remove('active');
+        errorMessage.classList.add('hidden'); // Masquer le message d'erreur
+    });
+
+    // Fermer le modal en cliquant en dehors de la fenêtre
+    window.addEventListener('click', (e) => {
+        if (e.target === loginModal) {
+            loginModal.classList.remove('active');
+            errorMessage.classList.add('hidden'); // Masquer le message d'erreur
+        }
+    });
+
+    // Validation du formulaire de connexion
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault(); // Empêche le rechargement de la page
+
+        // Exemple de validation simple
+        const validCredentials = {
+            veterinaire: { username: "vet", password: "1234" },
+            employe: { username: "emp", password: "5678" },
+            administrateur: { username: "admin", password: "admin" }
+        };
+
+        const role = roleInput.value;
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        if (
+            validCredentials[role] &&
+            validCredentials[role].username === username &&
+            validCredentials[role].password === password
+        ) {
+            alert(`Connexion réussie en tant que ${role}`);
+            loginModal.classList.remove('active');
+            loginForm.reset();
+        } else {
+            errorMessage.classList.remove('hidden');
+        }
+    });
+});
+
 
